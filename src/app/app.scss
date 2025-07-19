@@ -1,1 +1,86 @@
-// Estilos a tu preferencia (Se recomienda estilos sencillos y claros)
+// Estilos principales de la aplicación Rick and Morty
+
+// Variables de colores
+$primary-green: #00b74a;
+$secondary-blue: #0e7db8;
+$space-purple: #667eea;
+$dark-purple: #764ba2;
+
+// Reset y estilos globales
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, $space-purple 0%, $dark-purple 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+// Header principal
+.main-header {
+  text-align: center;
+  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(45deg, $primary-green, $secondary-blue, #ff6b6b);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease-in-out infinite;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: 2px;
+    margin: 0;
+  }
+}
+
+// Contenido principal
+.main-content {
+  padding: 0 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+// Animación del gradiente del título
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+// Responsive design para el header
+@media (max-width: 768px) {
+  .main-header {
+    padding: 20px 15px;
+    
+    h1 {
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+  }
+
+  .main-content {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-header h1 {
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+  }
+}
